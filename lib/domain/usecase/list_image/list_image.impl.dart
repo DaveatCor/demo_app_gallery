@@ -27,16 +27,15 @@ class ListImageImpl implements ListImageI {
   @override
   Future<void> getImages() async {
 
-    print("getImages");
-
     if (images!.isEmpty){
 
       try {
-        print("Provider.of<ConnectivityProvider>(_context!, listen: false).connectivityResult ${Provider.of<ConnectivityProvider>(_context!, listen: false).connectivityResult}");
-        if (Provider.of<ConnectivityProvider>(_context!, listen: false).connectivityResult != ConnectivityResult.none){
-          await _getImagesFromApi();
-        } else {
+
+        // Check If Have No Connection
+        if ( Provider.of<ConnectivityProvider>(_context!, listen: false).connectivityResult!.index == 4){
           await _getImagesFromDb();
+        } else {
+          await _getImagesFromApi();
         }
 
       } catch (e) {
@@ -70,7 +69,7 @@ class ListImageImpl implements ListImageI {
   }
 
   Future<void> _getImagesFromDb() async {
-
+    
     await SecureStorage.secureStorage.getData(StorageConstant.listImage).then((res) async {
       
       if (res != null){

@@ -5,9 +5,8 @@ import 'package:demo_app_gallery/index.dart';
 class ConnectivityProvider with ChangeNotifier {
   
   bool isInit = false;
-  ConnectivityResult? connectivityResult;
 
-  BuildContext? _context;
+  ConnectivityResult? connectivityResult;
 
   String content = '';
 
@@ -28,10 +27,6 @@ class ConnectivityProvider with ChangeNotifier {
     InternetChecker.connectInstance.onConnectivityChanged.listen((event) {
 
       connectivityResult = event;
-
-      print("connectivityResult ${connectivityResult!.index}");
-    
-      notifyListeners();
 
       if (connectivityResult == ConnectivityResult.mobile) {
         content = "Mobile connection";
@@ -58,6 +53,8 @@ class ConnectivityProvider with ChangeNotifier {
         content = "No connection";
         
       }
+
+      notifyListeners();
     });
   }
 

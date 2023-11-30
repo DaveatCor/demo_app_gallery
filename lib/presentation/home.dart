@@ -23,11 +23,33 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Gallery"),
         actions: [
+
           Consumer<ConnectivityProvider>(
             builder: (context, provider, wg){
-              if (provider.connectivityResult == null) return const SizedBox();
               
-              return Text(provider.connectivityResult!.index.toString());
+              if (provider.connectivityResult == null) {return const SizedBox();}
+
+              else if (provider.connectivityResult!.index == 4){
+                
+                return const Row(
+                  children: [
+
+                    SizedBox(height: 20, width: 20, child: CircleAvatar(backgroundColor: Colors.grey,)),
+
+                    Text("Offline")
+                  ],
+                );
+              }
+              
+              return const Row(
+                children: [
+
+                  SizedBox(height: 20, width: 20, child: CircleAvatar(backgroundColor: Colors.green,)),
+
+                  Text("Online")
+                ],
+              );
+
             }
           ),
         ],
@@ -66,10 +88,11 @@ class HomeScreen extends StatelessWidget {
                               builder: (context, provider, wg){
                                 
                                 if (provider.connectivityResult!.index == 4){
-                                  return Text(e.author.toString());
+                                  return Center(child: Text(e.author.toString()),);
                                 }
 
                                 return Image.network(e.downloadUrl!);
+
                               },
                             )
                           ),

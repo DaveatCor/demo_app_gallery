@@ -13,14 +13,40 @@ class ImageDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Scaffold(
+      appBar: AppBar(
+        title: Text("(${imageModel!.id}) ${imageModel!.author}"),
+      ),
       body: Consumer<ConnectivityProvider>(
         builder: (context, provider, wg){
           return Column(
             children: [
+
+              SizedBox(
+                height: 300,
+                child: Card(
+                  child: Consumer<ConnectivityProvider>(
+                    builder: (context, provider, wg){
+                      
+                      if (provider.connectivityResult!.index == 4){
+                        return Center(child: Text(imageModel!.author.toString()),);
+                      }
+
+                      return Image.network(imageModel!.downloadUrl!);
+                      
+                    },
+                  )
+                ),
+              ),
               
-              Text(imageModel!.author!),
-    
-              Text(provider.connectivityResult!.index.toString()),
+              Row(
+                children: [
+
+                  Expanded(child: Contents(title: "Id", subTitle: imageModel!.id,)),
+
+                  Expanded(child: Contents(title: "Author", subTitle: imageModel!.author,))
+                  
+                ],
+              ),
               
             ],
           );
@@ -29,5 +55,25 @@ class ImageDetail extends StatelessWidget {
     );
   }
 
+}
+
+class Contents extends StatelessWidget {
+  
+  final String? title;
+  final String? subTitle;
+
+  const Contents({super.key, @required this.title, @required this.subTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        Text(title!, style: const TextStyle(color: Colors.grey),),
+
+        Text(subTitle!)
+      ],
+    );
+  }
 
 }

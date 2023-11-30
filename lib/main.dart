@@ -31,7 +31,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: Consumer<ConnectivityProvider>(
+        builder: (context, provider, wg){
+
+          if (provider.connectivityResult == null) return const CircularProgressIndicator();
+
+          return HomeScreen();
+        },
+      ),
     );
   }
 }
