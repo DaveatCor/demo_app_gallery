@@ -1,8 +1,7 @@
-import 'package:demo_app_gallery/index.dart';
 import 'package:demo_app_gallery/infratstucture/file_management.dart';
 import 'package:demo_app_gallery/presentation/provider/connectivity.pro.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:provider/provider.dart';
+
+import 'package:demo_app_gallery/index.dart';
 
 void main() async {
   
@@ -35,14 +34,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: HomeScreen()
-      // Consumer<ConnectivityProvider>(
-      //   builder: (context, provider, wg){
-
-      //     if (provider.connectivityResult == null) return const CircularProgressIndicator();
-
-      //     return HomeScreen();
-      //   },
-      // ),
     );
   }
 }

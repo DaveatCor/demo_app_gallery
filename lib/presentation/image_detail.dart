@@ -1,9 +1,5 @@
-import 'dart:io';
-
 import 'package:demo_app_gallery/domain/model/image.model.dart';
 import 'package:demo_app_gallery/index.dart';
-import 'package:demo_app_gallery/presentation/provider/connectivity.pro.dart';
-import 'package:provider/provider.dart';
 
 class ImageDetail extends StatelessWidget {
 

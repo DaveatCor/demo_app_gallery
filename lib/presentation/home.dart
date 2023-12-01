@@ -1,11 +1,8 @@
-import 'dart:io';
-
-import 'package:demo_app_gallery/application/services/connection.s.dart';
 import 'package:demo_app_gallery/domain/usecase/list_image/list_image.impl.dart';
-import 'package:demo_app_gallery/index.dart';
 import 'package:demo_app_gallery/presentation/image_detail.dart';
 import 'package:demo_app_gallery/presentation/provider/connectivity.pro.dart';
-import 'package:provider/provider.dart';
+import 'package:demo_app_gallery/index.dart';
+
 
 class HomeScreen extends StatelessWidget {
   

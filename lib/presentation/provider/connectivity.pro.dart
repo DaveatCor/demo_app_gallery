@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:demo_app_gallery/application/services/connection.s.dart';
 import 'package:demo_app_gallery/application/services/store_data.s.dart';
