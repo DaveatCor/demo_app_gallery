@@ -1,4 +1,5 @@
 import 'package:demo_app_gallery/index.dart';
+import 'package:demo_app_gallery/infratstucture/file_management.dart';
 import 'package:demo_app_gallery/presentation/provider/connectivity.pro.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +24,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Provider.of<ConnectivityProvider>(context, listen: false).init();
+    Provider.of<ConnectivityProvider>(context, listen: false).initState();
+    
+    FileManangement.initState();
 
     return MaterialApp(
       title: 'Flutter Demo',

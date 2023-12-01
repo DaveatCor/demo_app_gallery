@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:demo_app_gallery/application/services/connection.s.dart';
 import 'package:demo_app_gallery/domain/usecase/list_image/list_image.impl.dart';
 import 'package:demo_app_gallery/index.dart';
@@ -91,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                                   return Center(child: Text(e.author.toString()),);
                                 }
 
-                                return Image.network(e.downloadUrl!);
+                                return Image.file(File('/data/user/0/com.example.demo_app_gallery/app_flutter/images/0.jpg'));//Image.network(e.downloadUrl!);
 
                               },
                             )
@@ -106,12 +108,13 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      )
+      // ,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: (){},
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }

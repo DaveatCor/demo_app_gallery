@@ -10,7 +10,7 @@ class ConnectivityProvider with ChangeNotifier {
 
   String content = '';
 
-  void init() async {
+  void initState() async {
 
     await InternetChecker.initConnection();
     

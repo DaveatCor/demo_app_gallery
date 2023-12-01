@@ -13,4 +13,8 @@ class GetApi {
   Future<_http.Response> getListImages({int page = 0, int limit = 10}) async {
     return _http.get( Uri.parse("${dotenv.get('API_URL')}/list?page=$page&limit=$limit") );
   }
+
+  Future<_http.Response> downloadUrlImg(String urlImage) async {
+    return await _http.Client().get(Uri.parse(urlImage));
+  }
 }

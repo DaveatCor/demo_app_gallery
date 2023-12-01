@@ -28,7 +28,7 @@ class ImageDetail extends StatelessWidget {
                     builder: (context, provider, wg){
                       
                       if (provider.connectivityResult!.index == 4){
-                        return Center(child: Text(imageModel!.author.toString()),);
+                        return const Center(child: CircularProgressIndicator(),);
                       }
 
                       return Image.network(imageModel!.downloadUrl!);
