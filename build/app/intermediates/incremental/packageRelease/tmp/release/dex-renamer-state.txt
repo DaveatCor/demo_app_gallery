@@ -1,0 +1,4 @@
+#Fri Dec 01 22:32:51 ICT 2023
+base.0=/Users/daveat/Documents/demo_app_gallery/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

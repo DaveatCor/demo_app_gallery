@@ -1,0 +1,16 @@
+com.example.demo_app_gallery.app-jetified-window-1.0.0-beta04-0 /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/res
+com.example.demo_app_gallery.app-jetified-security-crypto-1.1.0-alpha06-1 /Users/daveat/.gradle/caches/transforms-3/2dd5e7ab9230030ff78143f5215ea597/transformed/jetified-security-crypto-1.1.0-alpha06/res
+com.example.demo_app_gallery.app-jetified-annotation-experimental-1.1.0-2 /Users/daveat/.gradle/caches/transforms-3/6c0c163cc77ae6c91f9f7dfcd179c29c/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.demo_app_gallery.app-core-1.6.0-3 /Users/daveat/.gradle/caches/transforms-3/7e9df2ac2213a6bd3cef0f2f27870d79/transformed/core-1.6.0/res
+com.example.demo_app_gallery.app-jetified-window-java-1.0.0-beta04-4 /Users/daveat/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.demo_app_gallery.app-main-5 /Users/daveat/Documents/demo_app_gallery/android/app/src/main/res
+com.example.demo_app_gallery.app-release-6 /Users/daveat/Documents/demo_app_gallery/android/app/src/release/res
+com.example.demo_app_gallery.app-pngs-7 /Users/daveat/Documents/demo_app_gallery/build/app/generated/res/pngs/release
+com.example.demo_app_gallery.app-resValues-8 /Users/daveat/Documents/demo_app_gallery/build/app/generated/res/resValues/release
+com.example.demo_app_gallery.app-rs-9 /Users/daveat/Documents/demo_app_gallery/build/app/generated/res/rs/release
+com.example.demo_app_gallery.app-mergeReleaseResources-10 /Users/daveat/Documents/demo_app_gallery/build/app/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.demo_app_gallery.app-mergeReleaseResources-11 /Users/daveat/Documents/demo_app_gallery/build/app/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.demo_app_gallery.app-merged_res-12 /Users/daveat/Documents/demo_app_gallery/build/app/intermediates/merged_res/release
+com.example.demo_app_gallery.app-packaged_res-13 /Users/daveat/Documents/demo_app_gallery/build/connectivity_plus/intermediates/packaged_res/release
+com.example.demo_app_gallery.app-packaged_res-14 /Users/daveat/Documents/demo_app_gallery/build/flutter_secure_storage/intermediates/packaged_res/release
+com.example.demo_app_gallery.app-packaged_res-15 /Users/daveat/Documents/demo_app_gallery/build/path_provider_android/intermediates/packaged_res/release

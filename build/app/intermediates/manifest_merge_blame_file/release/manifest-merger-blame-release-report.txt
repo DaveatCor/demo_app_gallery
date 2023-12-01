@@ -1,0 +1,101 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.demo_app_gallery"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:3:5-66
+11-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:4:5-79
+12-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:4:22-77
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:5:5-80
+13-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:5:22-78
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[:connectivity_plus] /Users/daveat/Documents/demo_app_gallery/build/connectivity_plus/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-79
+14-->[:connectivity_plus] /Users/daveat/Documents/demo_app_gallery/build/connectivity_plus/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-76
+15
+16    <application
+17        android:name="android.app.Application"
+17-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:9:9-42
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.6.0] /Users/daveat/.gradle/caches/transforms-3/7e9df2ac2213a6bd3cef0f2f27870d79/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+19        android:icon="@mipmap/ic_launcher"
+19-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:10:9-43
+20        android:label="demo_app_gallery" >
+20-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:8:9-41
+21        <activity
+21-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:11:9-31:20
+22            android:name="com.example.demo_app_gallery.MainActivity"
+22-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:12:13-41
+23            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+23-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:16:13-163
+24            android:exported="true"
+24-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:13:13-36
+25            android:hardwareAccelerated="true"
+25-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:17:13-47
+26            android:launchMode="singleTop"
+26-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:14:13-43
+27            android:theme="@style/LaunchTheme"
+27-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:15:13-47
+28            android:windowSoftInputMode="adjustResize" >
+28-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:18:13-55
+29
+30            <!--
+31                 Specifies an Android theme to apply to this Activity as soon as
+32                 the Android process has started. This theme is visible to the user
+33                 while the Flutter UI initializes. After that, this theme continues
+34                 to determine the Window background behind the Flutter UI.
+35            -->
+36            <meta-data
+36-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:23:13-26:17
+37                android:name="io.flutter.embedding.android.NormalTheme"
+37-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:24:15-70
+38                android:resource="@style/NormalTheme" />
+38-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:25:15-52
+39
+40            <intent-filter>
+40-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:27:13-30:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:28:17-68
+41-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:28:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:29:17-76
+43-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:29:27-74
+44            </intent-filter>
+45        </activity>
+46        <!--
+47             Don't delete the meta-data below.
+48             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+49        -->
+50        <meta-data
+50-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:34:9-36:33
+51            android:name="flutterEmbedding"
+51-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:35:13-44
+52            android:value="2" />
+52-->/Users/daveat/Documents/demo_app_gallery/android/app/src/main/AndroidManifest.xml:36:13-30
+53
+54        <uses-library
+54-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+55            android:name="androidx.window.extensions"
+55-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+56            android:required="false" />
+56-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+57        <uses-library
+57-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+58            android:name="androidx.window.sidecar"
+58-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+59            android:required="false" />
+59-->[androidx.window:window:1.0.0-beta04] /Users/daveat/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+60    </application>
+61
+62</manifest>
