@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:demo_app_gallery/application/services/store_data.s.dart';
 import 'package:demo_app_gallery/data/rest_api/get.dart';
 import 'package:demo_app_gallery/domain/contant/storage_key.const.dart';
@@ -15,7 +13,7 @@ class ListImageImpl implements ListImageI {
 
   final GetApi _getApi = GetApi.getApi;
 
-  List<ImageModel>? images = [];
+  List<ImageModel>? images;
 
   ValueNotifier<bool> isReady = ValueNotifier(false);
   
@@ -27,21 +25,28 @@ class ListImageImpl implements ListImageI {
 
   @override
   Future<void> getImages() async {
-
-    if (images!.isEmpty){
+    
+    if (images == null){
 
       try {
+        
+        print("(await SecureStorage.secureStorage.getData(StorageConstant.connectivityResult)) ${(await SecureStorage.secureStorage.getData(StorageConstant.connectivityResult))}");
 
         // Check If Have No Connection
-        if ( Provider.of<ConnectivityProvider>(_context!, listen: false).connectivityResult!.index == 4){
+        if ( json.decode( (await SecureStorage.secureStorage.getData(StorageConstant.connectivityResult))! ) == 4){
           await _getImagesFromDb();
         } else {
           await _getImagesFromApi();
         }
 
+        // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+        Provider.of<ConnectivityProvider>(_context!, listen: false).notifyListeners();
+
       } catch (e) {
         
         isReady.value = true;
+        
+        print("Catch error $e");
       }
     }
 
@@ -56,12 +61,16 @@ class ListImageImpl implements ListImageI {
         images = List<Map<String, dynamic>>.from(json.decode(res.body)).map((map) {
 
           return ImageModel.fromJson(map);
+          
         }).toList();
+
+        // Notify State
+        isReady.value = true;
         
         await downloadNSaveImage();
         
         // Store Data
-        SecureStorage.secureStorage.storeData(StorageConstant.listImage, res.body);
+        SecureStorage.secureStorage.storeData(StorageConstant.listImage, json.encode(images!.map((e) => e.toJson()).toList()));
 
       }
 
@@ -71,15 +80,12 @@ class ListImageImpl implements ListImageI {
 
   Future<void> downloadNSaveImage() async {
     
-    print("downloadNSaveImage");
-    for (ImageModel img in images!){
-      img.downloadUrl = (await FileManangement.writeAsBytes(img.downloadUrl!, img.id!))!.path;
+    for (var img in images!){
+      img.downloadUrl = (await FileManangement.writeAsBytes(img.downloadUrl!, img.id!));
 
-      print("img.downloadUrl ${img.downloadUrl}");
+      img.isSaved!.value = true;
     }
-
-    // Notify State
-    isReady.value = true;
+  
   }
 
   Future<void> _getImagesFromDb() async {

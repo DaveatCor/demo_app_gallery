@@ -34,14 +34,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Consumer<ConnectivityProvider>(
-        builder: (context, provider, wg){
+      home: HomeScreen()
+      // Consumer<ConnectivityProvider>(
+      //   builder: (context, provider, wg){
 
-          if (provider.connectivityResult == null) return const CircularProgressIndicator();
+      //     if (provider.connectivityResult == null) return const CircularProgressIndicator();
 
-          return HomeScreen();
-        },
-      ),
+      //     return HomeScreen();
+      //   },
+      // ),
     );
   }
 }

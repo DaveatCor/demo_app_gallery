@@ -64,13 +64,14 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
       
+              // Notifer For Data Fetched
               ValueListenableBuilder(
                 valueListenable: _listImageImpl.isReady, 
                 builder: (context, isReady, wg){
       
                   if (isReady == false) return const CircularProgressIndicator();
       
-                  if(_listImageImpl.images!.isEmpty)return const Text("Image not found");
+                  if(_listImageImpl.images!.isEmpty) return const Text("Image not found");
       
                   return ListView(
                     physics: const NeverScrollableScrollPhysics(),
@@ -78,6 +79,7 @@ class HomeScreen extends StatelessWidget {
                     children: _listImageImpl.images!.map((e) {
                       return InkWell(
                         onTap: (){
+
                           Navigator.push(
                             context, 
                             MaterialPageRoute(builder: (context) => ImageDetail(imageModel: e,))
@@ -86,17 +88,17 @@ class HomeScreen extends StatelessWidget {
                         child: SizedBox(
                           height: 300,
                           child: Card(
-                            child: Consumer<ConnectivityProvider>(
-                              builder: (context, provider, wg){
+                            child: ValueListenableBuilder(
+                              valueListenable: e.isSaved!, 
+                              builder: (context, isSaved, wg){
+
+                                if (isSaved == false) return const Center(child: CircularProgressIndicator());
+
+                                return Image.file(File(e.downloadUrl!));
                                 
-                                if (provider.connectivityResult!.index == 4){
-                                  return Center(child: Text(e.author.toString()),);
-                                }
-
-                                return Image.file(File('/data/user/0/com.example.demo_app_gallery/app_flutter/images/0.jpg'));//Image.network(e.downloadUrl!);
-
-                              },
+                              }
                             )
+
                           ),
                         ),
                       );
@@ -109,12 +111,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       )
-      // ,
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: (){},
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
     );
   }
 }

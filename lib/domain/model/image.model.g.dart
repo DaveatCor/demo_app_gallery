@@ -13,6 +13,7 @@ ImageModel _$ImageFromJson(Map<String, dynamic> json) => ImageModel(
       height: json['height'] as int?,
       url: json['url'] as String?,
       downloadUrl: json['download_url'] as String?,
+      isSaved: ValueNotifier(json['is_saved'] ?? false),
     );
 
 Map<String, dynamic> _$ImageToJson(ImageModel instance) => <String, dynamic>{
@@ -22,4 +23,5 @@ Map<String, dynamic> _$ImageToJson(ImageModel instance) => <String, dynamic>{
       'height': instance.height,
       'url': instance.url,
       'download_url': instance.downloadUrl,
+      'is_saved': instance.isSaved!.value
     };

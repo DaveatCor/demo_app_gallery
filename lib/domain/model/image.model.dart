@@ -1,3 +1,4 @@
+import 'package:demo_app_gallery/index.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'image.model.g.dart';
@@ -11,6 +12,7 @@ class ImageModel {
   int? height;
   String? url;
   String? downloadUrl;
+  ValueNotifier<bool?>? isSaved;
 
   ImageModel({
     this.id,
@@ -18,7 +20,8 @@ class ImageModel {
     this.width,
     this.height,
     this.url,
-    this.downloadUrl
+    this.downloadUrl,
+    this.isSaved
   });
 
   factory ImageModel.fromJson(Map<String, dynamic> jsn) => _$ImageFromJson(jsn);

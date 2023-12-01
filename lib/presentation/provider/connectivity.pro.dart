@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:demo_app_gallery/application/services/connection.s.dart';
+import 'package:demo_app_gallery/application/services/store_data.s.dart';
+import 'package:demo_app_gallery/domain/contant/storage_key.const.dart';
 import 'package:demo_app_gallery/index.dart';
 
 class ConnectivityProvider with ChangeNotifier {
@@ -16,7 +20,7 @@ class ConnectivityProvider with ChangeNotifier {
     
     connectivityResult = InternetChecker.connectivityResult;
 
-    notifyListeners();
+    await SecureStorage.secureStorage.storeData(StorageConstant.connectivityResult, json.encode(connectivityResult!.index));
 
     connectionListener();
 

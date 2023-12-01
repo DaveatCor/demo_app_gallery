@@ -30,37 +30,20 @@ class FileManangement {
   }
 
   /// Download And Write Image To Storage
-  static Future<File?> writeAsBytes(String urlImage, String id) async {
+  static Future<String?> writeAsBytes(String urlImage, String id) async {
 
-    try {
-      print("writeAsBytes");
-      await GetApi.getApi.downloadUrlImg(urlImage).then((res) async {
-        
-        print("res ${res.body}");
+    return await GetApi.getApi.downloadUrlImg(urlImage).then((res) async {
 
-        if (_dir == null){
-          await _requestStoragePermission();
-        }
+      if (_dir == null){
+        await _requestStoragePermission();
+      }
 
-        fileName = "${_file!.path}$id";
-        
-        print ("Finish create directory");
+      fileName = "${_file!.path}$id.jpg";
 
-        _file = await File("${fileName!}.jpg").writeAsBytes(res.bodyBytes);
+      await File(fileName!).writeAsBytes(res.bodyBytes);
 
-        print(_file!.path);
+      return fileName;
 
-        print("fileName $fileName.jpg");
-
-        print(await Directory("${fileName!}.jpg").exists());
-
-        return _file;
-
-      });
-    
-    } catch (e) {
-      print("Error $e");
-    }
-    return null;
+    });
   }
 }
